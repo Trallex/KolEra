@@ -16,7 +16,12 @@ namespace Erasmus
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Model model = new Model();
+            View view = new View();
+            Presenter p = new Presenter(model, view);
+           // Students studens = LoadXML.LoadStudents(@".\DBStu.xml");
+            //Universities universities = LoadXML.LoadUniversities(@"\.DBUni.xml");
+            Application.Run(view);
         }
     }
 }

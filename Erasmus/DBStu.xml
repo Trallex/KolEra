@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Students xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<Student>
+		<Name>Andrzej</Name>
+
+		<Surname>Kowalski</Surname>
+
+		<email>k.andrzej@gmail.com</email>
+
+		<University>CZ OLOMOUC01</University>
+	</Student>
+	
+	<Student>
+		<Name>Jakub</Name>
+
+		<Surname>Piekarz</Surname>
+
+		<email>bulka76@gmail.com</email>
+
+		<University>P COVILHA01</University>
+	</Student>
+	
+	<Student>
+		<Name>Natalia</Name>
+
+		<Surname>Konwalia</Surname>
+
+		<email>54det67@mail.pl</email>
+
+		<University>SF OULU01</University>
+	</Student>
+
+</Students>
+

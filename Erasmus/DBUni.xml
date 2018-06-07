@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Universities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<University>
+		<Code>CZ OLOMOUC01</Code>
+
+		<Country>Czech Rep</Country>
+
+		<Site>www.upol.cz</Site>
+
+		<Faculty>RMS</Faculty>
+	</University>	
+	
+	<University>
+		<Code>P COVILHA01</Code>
+
+		<Country>Portugal</Country>
+
+		<Site>www.ubi.pt</Site>
+
+		<Faculty>RAU</Faculty>
+	</University>
+	
+	<University>
+		<Code>SF OULU01</Code>
+
+		<Country>Finland</Country>
+
+		<Site>www.oulu.fi</Site>
+
+		<Faculty></Faculty>
+	</University>
+	
+	<University>
+		<Code></Code>
+
+		<Country></Country>
+
+		<Site></Site>
+
+		<Faculty></Faculty>
+	</University>
+	
+	
+</Universities>
