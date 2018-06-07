@@ -24,7 +24,7 @@ namespace Erasmus
         public event Func <bool, object> FillWithXML;
         private void studenciToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            columns.IsStudents = true;
+            columns.TypeOfData = "Students";
             columns.ColName = new string[] { "Imię", "Nazwisko", "email", "Uczelnia" };
             if (studentsList == null)
                 studentsList = (Students)FillWithXML(true); //true - get students
@@ -35,7 +35,7 @@ namespace Erasmus
 
         private void uczelnieToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            columns.IsStudents = false;
+            columns.TypeOfData = "Universities";
             columns.ColName = new string[] { "Kod Erasmus", "Pańswto", "Strona WWW", "Wydział" };
             if (universitiesList == null)
                 universitiesList = (Universities)FillWithXML(false); //false - get universities           

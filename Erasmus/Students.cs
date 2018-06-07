@@ -21,7 +21,10 @@ namespace Erasmus
 
 
         public Student[] ToArray() => studentList.ToArray();
-
+        public void AddItem(Student s)
+        {
+            studentList.Add(s);
+        }
 
 
     }

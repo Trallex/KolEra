@@ -16,8 +16,8 @@ namespace Erasmus.Views
         {
             InitializeComponent();
         }
-
-        public bool IsStudents{ get; set; }
+      
+        public string TypeOfData { get; set; }
 
         public string[] ColName
         {
@@ -42,13 +42,38 @@ namespace Erasmus.Views
 
         public object ColElements
         {
-            get {return null; }                
+            get
+            {                
+                int i = 0;
+                if (TypeOfData == "Students")
+                {
+                    List<Student> students = new List<Student>();
+                    foreach (string s in listBoxValues1.Items)
+                    {
+                        //listBoxValues1.Items[i].ToString()
+                     //   Student student = new Student(listBoxValues1.Items[i].ToString(), listBoxValues2.Items[i].ToString(), listBoxValues3.Items[i].ToString(), listBoxValues4.Items[i].ToString())
+
+                    }
+                    return students;
+                }
+                else if(TypeOfData == "Universities")
+                {
+                    List<University> universities = new List<University>();
+                    foreach (string s in listBoxValues1.Items)
+                    {
+                        University university = new University(s, listBoxValues2.Items[i].ToString(), listBoxValues3.Items[i].ToString(), listBoxValues4.Items[i].ToString());
+                        i++;
+                        universities.Add(university);
+                    }
+                    return universities;
+                }
+                return null;
+            }                
             set
             {
                 ClearColumns();
-                try
-                {
-                    if (IsStudents)
+
+                    if (TypeOfData=="Students")
                     {
                         Students students = (Students)value;
                         foreach (Student s in students.studentList)
@@ -59,7 +84,7 @@ namespace Erasmus.Views
                             listBoxValues4.Items.Add(s.code);
                         }
                     }
-                    else if (!IsStudents)
+                    else if (TypeOfData=="Universities")
                     {
                         Universities universities = (Universities)value;
                         foreach (University u in universities.universitiesList)
@@ -69,9 +94,7 @@ namespace Erasmus.Views
                             listBoxValues3.Items.Add(u.site);
                             listBoxValues4.Items.Add(u.faculty);
                         }
-                    }
-                }
-                catch(Exception) { }
+                    }               
             }
                 
 
@@ -85,6 +108,29 @@ namespace Erasmus.Views
             listBoxValues2.Items.Clear();
             listBoxValues3.Items.Clear();
             listBoxValues4.Items.Clear();
+        }
+
+        private void IndexChange(object sender, EventArgs e)       
+        {
+            ListBox lb = sender as ListBox;
+            listBoxValues1.SelectedIndex = lb.SelectedIndex;
+            listBoxValues2.SelectedIndex = lb.SelectedIndex;
+            listBoxValues3.SelectedIndex = lb.SelectedIndex;
+            listBoxValues4.SelectedIndex = lb.SelectedIndex;
+        }
+
+        private void ItemSelect(object sender, EventArgs e)
+        {
+            if(TypeOfData=="Students")
+            {
+                
+                
+            }
+            else if(TypeOfData=="Universities")
+            {
+                object t = ColElements;
+                Console.WriteLine("jsjsj");
+            }
         }
     }
 }

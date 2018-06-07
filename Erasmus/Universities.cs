@@ -18,9 +18,18 @@ namespace Erasmus
         {
             universitiesList = new List<University>();
         }
+        public void EditElement(int i, University u)
+        {
+            universitiesList[i] = u;
 
+        }
 
         public University[] ToArray() => universitiesList.ToArray();
+
+        public void AddItem(University u)
+        {
+            universitiesList.Add(u);
+        }
 
     }
 
@@ -42,6 +51,12 @@ namespace Erasmus
             this.site = "";
             this.faculty = "";
         }
-        
+        public University(string code, string country, string site, string faculty)
+        {
+            this.code = code;
+            this.country = country;
+            this.site = site;
+            this.faculty = faculty;
+        }
     }
 }

@@ -46,6 +46,8 @@
             this.listBoxValues1.Name = "listBoxValues1";
             this.listBoxValues1.Size = new System.Drawing.Size(189, 340);
             this.listBoxValues1.TabIndex = 0;
+            this.listBoxValues1.SelectedIndexChanged += new System.EventHandler(this.IndexChange);
+            this.listBoxValues1.DoubleClick += new System.EventHandler(this.ItemSelect);
             // 
             // labelColName1
             // 
@@ -75,6 +77,8 @@
             this.listBoxValues2.Name = "listBoxValues2";
             this.listBoxValues2.Size = new System.Drawing.Size(189, 340);
             this.listBoxValues2.TabIndex = 2;
+            this.listBoxValues2.SelectedIndexChanged += new System.EventHandler(this.IndexChange);
+            this.listBoxValues2.DoubleClick += new System.EventHandler(this.ItemSelect);
             // 
             // labelColName4
             // 
@@ -95,6 +99,8 @@
             this.listBoxValues4.Name = "listBoxValues4";
             this.listBoxValues4.Size = new System.Drawing.Size(189, 340);
             this.listBoxValues4.TabIndex = 6;
+            this.listBoxValues4.SelectedIndexChanged += new System.EventHandler(this.IndexChange);
+            this.listBoxValues4.DoubleClick += new System.EventHandler(this.ItemSelect);
             // 
             // labelColName3
             // 
@@ -113,6 +119,8 @@
             this.listBoxValues3.Name = "listBoxValues3";
             this.listBoxValues3.Size = new System.Drawing.Size(189, 340);
             this.listBoxValues3.TabIndex = 4;
+            this.listBoxValues3.SelectedIndexChanged += new System.EventHandler(this.IndexChange);
+            this.listBoxValues3.DoubleClick += new System.EventHandler(this.ItemSelect);
             // 
             // Column
             // 
