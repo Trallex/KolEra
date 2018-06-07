@@ -16,21 +16,33 @@ namespace Erasmus
         {
             InitializeComponent();
         }
-        public event Func <string[]> FillWithStudents;
+
+        Universities universitiesList = null;
+        Students studentsList = null;
+
+
+        public event Func <bool, object> FillWithXML;
         private void studenciToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            column1.ColName = "Imię";
-            column2.ColName = "Nazwisko";
-            column3.ColName = "email";
-            column4.ColName = "Uczelnia";
+            columns.IsStudents = true;
+            columns.ColName = new string[] { "Imię", "Nazwisko", "email", "Uczelnia" };
+            if (studentsList == null)
+                studentsList = (Students)FillWithXML(true); //true - get students
+            columns.ColElements = studentsList;
+            
+
         }
 
         private void uczelnieToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            column1.ColName = "Kod Erasmus";
-            column2.ColName = "Pańswto";
-            column3.ColName = "Strona WWW";
-            column4.ColName = "Wydział";
+            columns.IsStudents = false;
+            columns.ColName = new string[] { "Kod Erasmus", "Pańswto", "Strona WWW", "Wydział" };
+            if (universitiesList == null)
+                universitiesList = (Universities)FillWithXML(false); //false - get universities           
+            columns.ColElements = universitiesList;
+            
+
+
         }
     }
 }

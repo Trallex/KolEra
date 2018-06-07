@@ -8,5 +8,6 @@ namespace Erasmus
 {
     public interface IView
     {
+        event Func<bool, object> FillWithXML;
     }
 }

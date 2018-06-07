@@ -8,8 +8,14 @@ namespace Erasmus
 {
     public class Model
     {
-        internal string test() {
-            return "kek"; }
+        internal Universities GetUniversities(string path)
+        {
+            return LoadXML.LoadUniversities(path);
+        }
+        internal Students GetStudents(string path)
+        {
+            return LoadXML.LoadStudents(path);
+        }
     }
 }
  
