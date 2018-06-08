@@ -12,7 +12,7 @@ namespace Erasmus.Views
 {
     public partial class EditItem : Form, IEditItem
     {
-
+        public event Action<int, string[]> SaveObject;
 
         public EditItem()
         {
@@ -24,7 +24,7 @@ namespace Erasmus.Views
             
             InitializeComponent();
             fillFields(labels, values);
-            EditedItem = index;
+            EditedItem = index;            
 
         }
 
@@ -49,7 +49,7 @@ namespace Erasmus.Views
             }
         }
 
-        public event Action<int, string[]> SaveObject;
+        
 
 
 

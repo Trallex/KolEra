@@ -44,7 +44,7 @@
             this.uczelnieToolStripMenuItem});
             this.menuStripNavi.Location = new System.Drawing.Point(0, 0);
             this.menuStripNavi.Name = "menuStripNavi";
-            this.menuStripNavi.Size = new System.Drawing.Size(855, 28);
+            this.menuStripNavi.Size = new System.Drawing.Size(897, 28);
             this.menuStripNavi.TabIndex = 1;
             this.menuStripNavi.Text = "menuStrip1";
             // 
@@ -64,7 +64,7 @@
             // 
             // buttonShowRecord
             // 
-            this.buttonShowRecord.Location = new System.Drawing.Point(46, 430);
+            this.buttonShowRecord.Location = new System.Drawing.Point(12, 476);
             this.buttonShowRecord.Name = "buttonShowRecord";
             this.buttonShowRecord.Size = new System.Drawing.Size(136, 23);
             this.buttonShowRecord.TabIndex = 2;
@@ -80,18 +80,17 @@
         "Column",
         "Column",
         "Column"};
-            this.columns.Location = new System.Drawing.Point(12, 52);
+            this.columns.Location = new System.Drawing.Point(12, 31);
             this.columns.Name = "columns";
-            this.columns.SelectedIndex = -1;
-            this.columns.Size = new System.Drawing.Size(795, 372);
-            this.columns.TabIndex = 3;
+            this.columns.Size = new System.Drawing.Size(787, 439);
+            this.columns.TabIndex = 4;
             this.columns.TypeOfData = null;
             // 
             // View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 474);
+            this.ClientSize = new System.Drawing.Size(897, 547);
             this.Controls.Add(this.columns);
             this.Controls.Add(this.buttonShowRecord);
             this.Controls.Add(this.menuStripNavi);

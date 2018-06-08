@@ -79,15 +79,17 @@ namespace Erasmus
 
 
         #endregion
-
+        public event Action<string[], string[], int> OpenWindow;
         private void buttonShowRecord_Click(object sender, EventArgs e)
         {
            
             if (columns.SelectedIndex != -1)
             {
-                Views.EditItem editItem = new Views.EditItem(GetLables(DataType), GetObjectValues(columns.SelectedIndex), columns.SelectedIndex);
-                //editItem.Parent = this;
-                editItem.ShowDialog();
+                OpenWindow(GetLables(DataType), GetObjectValues(columns.SelectedIndex), columns.SelectedIndex);
+                //Views.EditItem editItem = new Views.EditItem(GetLables(DataType), GetObjectValues(columns.SelectedIndex), columns.SelectedIndex,);
+                ////editItem.Parent = this;
+                //editItem.ShowDialog();
+
             }
 
         }

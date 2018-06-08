@@ -9,20 +9,20 @@ namespace Erasmus
     public class Presenter
     {
         IView view;
-        IEditItem editItem;
+       // IEditItem editItem;
         Model model;
         public Presenter(Model model, IView view, IEditItem editItem)
         {
             this.model = model;
             this.view = view;
-            this.editItem = editItem;
+            //this.editItem = editItem;
 
             
             view.LoadData += PresenterDecide;
             view.GetLables += PresenterLabels;
             view.GetObjectValues += PresenterValues;
-
-            editItem.SaveObject += PresenterEditObject;
+            view.OpenWindow += PresenterNewWindow;
+            //editItem.SaveObject += PresenterEditObject;
         }
 
         private object PresenterDecide(string whichDataIsLoaded)
@@ -59,6 +59,11 @@ namespace Erasmus
         {
             model.IfChangesThenSave(index, objectArray, view.DataType);
         }
-
+        private void PresenterNewWindow(string[] labels, string[] values, int index)
+        {
+            Views.EditItem editItem = new Views.EditItem(labels, values, index);
+            editItem.SaveObject += PresenterEditObject;
+            editItem.ShowDialog();
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace Erasmus
         event Func<string, object> LoadData;
         event Func<string, string[]> GetLables;
         event Func<int, string[]> GetObjectValues;
-
+        event Action<string[], string[], int> OpenWindow;
         Students studentsList { get; set; }
         Universities universitiesList { get; set; }
         string DataType { get; set; }
