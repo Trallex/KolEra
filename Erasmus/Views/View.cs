@@ -17,6 +17,7 @@ namespace Erasmus
             InitializeComponent();
         }
 
+        #region pblc vals
         public Universities universitiesList
         {
             get { return universitiesList; }
@@ -42,8 +43,16 @@ namespace Erasmus
             get { return columns.ColName; }
             set { columns.ColName = value; }
         }
+        #endregion
 
-        
+
+        public event Func<string, object> LoadData;
+        public event Func<string, string[]> GetLables;
+        public event Func<int, string[]> GetObjectValues;
+       
+
+
+        #region mds
         private void studenciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DataType = "Students";
@@ -54,13 +63,11 @@ namespace Erasmus
         private void uczelnieToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DataType = "Universities";
-            setColumnsAndLabels();
-            //columns.ColName = 
+            setColumnsAndLabels();            
         }
 
 
-        public event Func<string, object> LoadData;
-        public event Func<string, string[]> GetLables;
+        
         private void setColumnsAndLabels()
         {
             ColumnsValue = LoadData(DataType);
@@ -71,15 +78,18 @@ namespace Erasmus
 
 
 
+        #endregion
 
+        private void buttonShowRecord_Click(object sender, EventArgs e)
+        {
+           
+            if (columns.SelectedIndex != -1)
+            {
+                Views.EditItem editItem = new Views.EditItem(GetLables(DataType), GetObjectValues(columns.SelectedIndex), columns.SelectedIndex);
+                //editItem.Parent = this;
+                editItem.ShowDialog();
+            }
 
-
-
-
-
-
-
-        public event Func<bool, object> FillWithXML;
-
+        }
     }
 }

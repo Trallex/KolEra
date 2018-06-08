@@ -31,7 +31,7 @@
             this.menuStripNavi = new System.Windows.Forms.MenuStrip();
             this.studenciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uczelnieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonShowRecord = new System.Windows.Forms.Button();
             this.columns = new Erasmus.Views.Column();
             this.menuStripNavi.SuspendLayout();
             this.SuspendLayout();
@@ -62,23 +62,30 @@
             this.uczelnieToolStripMenuItem.Text = "Uczelnie";
             this.uczelnieToolStripMenuItem.Click += new System.EventHandler(this.uczelnieToolStripMenuItem_Click);
             // 
-            // button1
+            // buttonShowRecord
             // 
-            this.button1.Location = new System.Drawing.Point(12, 430);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonShowRecord.Location = new System.Drawing.Point(46, 430);
+            this.buttonShowRecord.Name = "buttonShowRecord";
+            this.buttonShowRecord.Size = new System.Drawing.Size(136, 23);
+            this.buttonShowRecord.TabIndex = 2;
+            this.buttonShowRecord.Text = "Zobacz rekord";
+            this.buttonShowRecord.UseVisualStyleBackColor = true;
+            this.buttonShowRecord.Click += new System.EventHandler(this.buttonShowRecord_Click);
             // 
             // columns
             // 
-            this.columns.ColElements = new string[0];
-            this.columns.ColName = new string[] { "Column", "Column", "Column", "Column" };
+            this.columns.ColElements = null;
+            this.columns.ColName = new string[] {
+        "Column",
+        "Column",
+        "Column",
+        "Column"};
             this.columns.Location = new System.Drawing.Point(12, 52);
             this.columns.Name = "columns";
+            this.columns.SelectedIndex = -1;
             this.columns.Size = new System.Drawing.Size(795, 372);
             this.columns.TabIndex = 3;
+            this.columns.TypeOfData = null;
             // 
             // View
             // 
@@ -86,7 +93,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(855, 474);
             this.Controls.Add(this.columns);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonShowRecord);
             this.Controls.Add(this.menuStripNavi);
             this.MainMenuStrip = this.menuStripNavi;
             this.Name = "View";
@@ -100,7 +107,7 @@
 
         #endregion
         private System.Windows.Forms.MenuStrip menuStripNavi;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonShowRecord;
         private System.Windows.Forms.ToolStripMenuItem studenciToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uczelnieToolStripMenuItem;
         private Views.Column columns;

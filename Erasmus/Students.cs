@@ -21,11 +21,26 @@ namespace Erasmus
 
 
         public Student[] ToArray() => studentList.ToArray();
+
         public void AddItem(Student s)
         {
             studentList.Add(s);
         }
-
+        public void ReplaceStudent(int index, Student student)
+        {
+            studentList.RemoveAt(index);
+            studentList.Insert(index, student);
+        }
+        public string[] GetStudentArray(int index)
+        {
+            Student student = studentList[index];
+            List<string> val = new List<string>();
+            val.Add(student.name);
+            val.Add(student.surname);
+            val.Add(student.email);
+            val.Add(student.code);
+            return val.ToArray();
+        }
 
     }
 

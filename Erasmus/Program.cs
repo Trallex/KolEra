@@ -18,7 +18,8 @@ namespace Erasmus
             Application.SetCompatibleTextRenderingDefault(false);
             Model model = new Model();
             View view = new View();
-            Presenter p = new Presenter(model, view);           
+            Views.EditItem editItem = new Views.EditItem();
+            Presenter p = new Presenter(model, view, editItem);           
             Application.Run(view);
         }
     }

@@ -9,22 +9,20 @@ namespace Erasmus
     public class Presenter
     {
         IView view;
+        IEditItem editItem;
         Model model;
-        public Presenter(Model model, IView view)
+        public Presenter(Model model, IView view, IEditItem editItem)
         {
             this.model = model;
             this.view = view;
-            view.FillWithXML += PresenterGetXMLData;
+            this.editItem = editItem;
+
+            
             view.LoadData += PresenterDecide;
             view.GetLables += PresenterLabels;
-        }
+            view.GetObjectValues += PresenterValues;
 
-        private object PresenterGetXMLData(bool StudOrUni)
-        {
-            if (StudOrUni)
-                return model.GetStudents("./DBStu.xml");
-            else
-                return model.GetUniversities("./DBUni.xml");
+            editItem.SaveObject += PresenterEditObject;
         }
 
         private object PresenterDecide(string whichDataIsLoaded)
@@ -49,8 +47,18 @@ namespace Erasmus
 
         private string[] PresenterLabels(string set)
         {
-            return model.RetrunLables(set);
-            
+            return model.RetrunLables(set);            
         }
+
+        private string[] PresenterValues(int index)
+        {
+            return model.ObjectValue(index, view.DataType);            
+        }
+
+        private void PresenterEditObject(int index, string[] objectArray)
+        {
+            model.IfChangesThenSave(index, objectArray, view.DataType);
+        }
+
     }
 }

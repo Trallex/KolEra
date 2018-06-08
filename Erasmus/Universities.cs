@@ -30,7 +30,22 @@ namespace Erasmus
         {
             universitiesList.Add(u);
         }
+        public void ReplaceUniversity(int index, University university)
+        {
+            universitiesList.RemoveAt(index);
+            universitiesList.Insert(index, university);
+        }
 
+        public string[] GetUniversityArray(int index)
+        {
+            University university = universitiesList[index];
+            List<string> val = new List<string>();
+            val.Add(university.code);
+            val.Add(university.country);
+            val.Add(university.site);
+            val.Add(university.faculty);
+            return val.ToArray();
+        }
     }
 
     public class University

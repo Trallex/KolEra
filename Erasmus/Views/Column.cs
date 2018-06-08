@@ -18,7 +18,11 @@ namespace Erasmus.Views
         }
       
         public string TypeOfData { get; set; }
-
+        public int SelectedIndex
+        {
+            get { return listBoxValues1.SelectedIndex; }
+            set { listBoxValues1.SelectedIndex = value; }
+        }
         public string[] ColName
         {
             get
@@ -99,7 +103,6 @@ namespace Erasmus.Views
 
         }     
 
-
            
         private void ClearColumns()
         {
@@ -120,7 +123,7 @@ namespace Erasmus.Views
 
         private void ItemSelect(object sender, EventArgs e)
         {
-                object t = ColElements;
+                //object t = ColElements;
 
         }
     }

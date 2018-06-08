@@ -56,6 +56,13 @@
     <Compile Include="Views\Column.Designer.cs">
       <DependentUpon>Column.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\EditItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EditItem.Designer.cs">
+      <DependentUpon>EditItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IEditItem.cs" />
     <Compile Include="Views\IView.cs" />
     <Compile Include="Views\View.cs">
       <SubType>Form</SubType>
@@ -67,6 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Views\Column.resx">
       <DependentUpon>Column.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EditItem.resx">
+      <DependentUpon>EditItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\View.resx">
       <DependentUpon>View.cs</DependentUpon>

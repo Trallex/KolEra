@@ -25,13 +25,44 @@ namespace Erasmus
         {
             if(set=="Universities")
             {
-                return new string[] { "Kod Erasmus", "Pańswto", "Strona WWW", "Wydział" };
+                return new string[] { "Kod Erasmus:", "Pańswto:", "Strona WWW:", "Wydział:" };
             }
             else if(set=="Students")
             {
-                return new string[] { "Imię", "Nazwisko", "email", "Uczelnia" };
+                return new string[] { "Imię:", "Nazwisko:", "email:", "Uczelnia:" };
             }
             else return null;
+        }
+
+        internal string[] ObjectValue(int index, string type)
+        {
+            if(type=="Students")
+            {
+                return studentList.GetStudentArray(index);
+               
+            }
+            else if(type=="Universities")
+            {
+                return universitiesList.GetUniversityArray(index);
+            }
+            else return null;
+        }
+
+        internal void IfChangesThenSave(int index, string[] objectArray, string dataType)
+        {
+            if(studentList.GetStudentArray(index)!=objectArray)
+            {
+                if(dataType=="Students")
+                {
+                    Student student = new Student(objectArray[0], objectArray[1], objectArray[2], objectArray[3]);
+                    studentList.ReplaceStudent(index, student);
+                }
+                else if(dataType=="Universities")
+                {
+                    University university = new University(objectArray[0], objectArray[1], objectArray[2], objectArray[3]);
+                    universitiesList.ReplaceUniversity(index, university);
+                }
+            }
         }
     }
 }
