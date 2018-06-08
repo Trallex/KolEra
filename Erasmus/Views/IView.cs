@@ -9,5 +9,11 @@ namespace Erasmus
     public interface IView
     {
         event Func<bool, object> FillWithXML;
+        event Func<string, object> LoadData;
+        event Func<string, string[]> GetLables;
+
+        Students studentsList { get; set; }
+        Universities universitiesList { get; set; }
+        
     }
 }

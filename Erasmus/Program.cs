@@ -18,9 +18,7 @@ namespace Erasmus
             Application.SetCompatibleTextRenderingDefault(false);
             Model model = new Model();
             View view = new View();
-            Presenter p = new Presenter(model, view);
-           // Students studens = LoadXML.LoadStudents(@".\DBStu.xml");
-            //Universities universities = LoadXML.LoadUniversities(@"\.DBUni.xml");
+            Presenter p = new Presenter(model, view);           
             Application.Run(view);
         }
     }

@@ -50,5 +50,14 @@ namespace Erasmus
 
         }
 
+        public Student(string name, string surname, string email, string code)
+        {
+            this.name = name;
+            this.surname = surname;
+            this.email = email;
+            this.code = code;
+
+        }
+
     }
 }

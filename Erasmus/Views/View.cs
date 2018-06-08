@@ -17,32 +17,69 @@ namespace Erasmus
             InitializeComponent();
         }
 
-        Universities universitiesList = null;
-        Students studentsList = null;
+        public Universities universitiesList
+        {
+            get { return universitiesList; }
+            set { universitiesList = value; }
+        }
+        public Students studentsList
+        {
+            get { return studentsList; }
+            set { studentsList = value; }
+        }
+        public string DataType
+        {
+            get { return columns.TypeOfData; }
+            set { columns.TypeOfData = value; }
+        }
+        public object ColumnsValue
+        {
+            get { return columns.ColElements; }
+            set { columns.ColElements = value; }
+        }
+        public string[] ColumsLabels
+        {
+            get { return columns.ColName; }
+            set { columns.ColName = value; }
+        }
 
-
-        public event Func <bool, object> FillWithXML;
+        
         private void studenciToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            columns.TypeOfData = "Students";
-            columns.ColName = new string[] { "Imię", "Nazwisko", "email", "Uczelnia" };
-            if (studentsList == null)
-                studentsList = (Students)FillWithXML(true); //true - get students
-            columns.ColElements = studentsList;
-            
+            DataType = "Students";
+            setColumnsAndLabels();
 
         }
 
         private void uczelnieToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            columns.TypeOfData = "Universities";
-            columns.ColName = new string[] { "Kod Erasmus", "Pańswto", "Strona WWW", "Wydział" };
-            if (universitiesList == null)
-                universitiesList = (Universities)FillWithXML(false); //false - get universities           
-            columns.ColElements = universitiesList;
-            
-
-
+            DataType = "Universities";
+            setColumnsAndLabels();
+            //columns.ColName = 
         }
+
+
+        public event Func<string, object> LoadData;
+        public event Func<string, string[]> GetLables;
+        private void setColumnsAndLabels()
+        {
+            ColumnsValue = LoadData(DataType);
+            ColumsLabels = GetLables(DataType);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public event Func<bool, object> FillWithXML;
+
     }
 }

@@ -50,8 +50,7 @@ namespace Erasmus.Views
                     List<Student> students = new List<Student>();
                     foreach (string s in listBoxValues1.Items)
                     {
-                        //listBoxValues1.Items[i].ToString()
-                     //   Student student = new Student(listBoxValues1.Items[i].ToString(), listBoxValues2.Items[i].ToString(), listBoxValues3.Items[i].ToString(), listBoxValues4.Items[i].ToString())
+                        Student student = new Student(s, listBoxValues2.Items[i].ToString(), listBoxValues3.Items[i].ToString(), listBoxValues4.Items[i].ToString());
 
                     }
                     return students;
@@ -121,16 +120,8 @@ namespace Erasmus.Views
 
         private void ItemSelect(object sender, EventArgs e)
         {
-            if(TypeOfData=="Students")
-            {
-                
-                
-            }
-            else if(TypeOfData=="Universities")
-            {
                 object t = ColElements;
-                Console.WriteLine("jsjsj");
-            }
+
         }
     }
 }
