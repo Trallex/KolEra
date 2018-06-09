@@ -49,8 +49,8 @@ namespace Erasmus
         public event Func<string, object> LoadData;
         public event Func<string, string[]> GetLables;
         public event Func<int, string[]> GetObjectValues;
-       
-
+        public event Action<string[], string[], int> OpenWindow;
+        public event Action<object> FormClose;
 
         #region mds
         private void studenciToolStripMenuItem_Click(object sender, EventArgs e)
@@ -74,24 +74,19 @@ namespace Erasmus
             ColumsLabels = GetLables(DataType);
         }
 
-
-
-
-
-        #endregion
-        public event Action<string[], string[], int> OpenWindow;
         private void buttonShowRecord_Click(object sender, EventArgs e)
         {
-           
             if (columns.SelectedIndex != -1)
             {
                 OpenWindow(GetLables(DataType), GetObjectValues(columns.SelectedIndex), columns.SelectedIndex);
-                //Views.EditItem editItem = new Views.EditItem(GetLables(DataType), GetObjectValues(columns.SelectedIndex), columns.SelectedIndex,);
-                ////editItem.Parent = this;
-                //editItem.ShowDialog();
-
             }
+        }
 
+        #endregion
+
+        private void View_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormClose(sender);
         }
     }
 }

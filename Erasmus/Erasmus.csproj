@@ -48,6 +48,7 @@
     <Compile Include="LoadXML.cs" />
     <Compile Include="Models\Model.cs" />
     <Compile Include="Presenter.cs" />
+    <Compile Include="SaveXML.cs" />
     <Compile Include="Students.cs" />
     <Compile Include="Universities.cs" />
     <Compile Include="Views\Column.cs">

@@ -22,13 +22,13 @@ namespace Erasmus.Views
         {
             get
             {
-                if (listViewData.Items != null)
+                if (listViewData.Items.Count>0)
                 {
                     int i = listViewData.SelectedItems[0].Index;
                     return i;
                 }
-                else return 0;
-            }// listBoxValues1.SelectedIndex; }
+                else return -1;
+            }
                 set
             {
                 if(value >-1)

@@ -64,6 +64,17 @@ namespace Erasmus
                 }
             }
         }
+        internal void SaveStudentsAndUniversities()
+        {
+            if (studentList != null) 
+            {
+                SaveXML.SaveToXML(studentList, "./DBStu.xml");
+            }
+            if (universitiesList != null) 
+            {
+                SaveXML.SaveToXML(universitiesList, "./DBUni.xml");
+            }
+        }
     }
 }
  

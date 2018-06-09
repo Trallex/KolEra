@@ -97,6 +97,7 @@
             this.MainMenuStrip = this.menuStripNavi;
             this.Name = "View";
             this.Text = "Erasmus";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.View_FormClosing);
             this.menuStripNavi.ResumeLayout(false);
             this.menuStripNavi.PerformLayout();
             this.ResumeLayout(false);
