@@ -64,6 +64,21 @@ namespace Erasmus
                 }
             }
         }
+
+        internal void AddNewObject(string[] objectArray, string dataType)
+        {
+            if (dataType == "Students")
+            {
+                Student student = new Student(objectArray[0], objectArray[1], objectArray[2], objectArray[3]);
+                studentList.AddItem(student);
+            }
+            else if (dataType == "Universities")
+            {
+                University university = new University(objectArray[0], objectArray[1], objectArray[2], objectArray[3]);
+                universitiesList.AddItem(university);
+            }
+        }
+
         internal void SaveStudentsAndUniversities()
         {
             if (studentList != null) 
@@ -73,6 +88,18 @@ namespace Erasmus
             if (universitiesList != null) 
             {
                 SaveXML.SaveToXML(universitiesList, "./DBUni.xml");
+            }
+        }
+
+        internal void DeleteRecord(int index, string dataType)
+        {
+            if (dataType == "Students")
+            {
+                studentList.studentList.RemoveAt(index);
+            }
+            else if (dataType == "Universities")
+            {
+                universitiesList.universitiesList.RemoveAt(index);
             }
         }
     }

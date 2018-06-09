@@ -14,9 +14,7 @@ namespace Erasmus
         event Func<int, string[]> GetObjectValues;
         event Action<string[], string[], int> OpenWindow;
         event Action<object> FormClose;
-
-        Students studentsList { get; set; }
-        Universities universitiesList { get; set; }
+        event Action<int> DeleteRecord;
         string DataType { get; set; }
         
     }

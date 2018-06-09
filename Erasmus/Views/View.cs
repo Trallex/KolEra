@@ -18,16 +18,6 @@ namespace Erasmus
         }
 
         #region pblc vals
-        public Universities universitiesList
-        {
-            get { return universitiesList; }
-            set { universitiesList = value; }
-        }
-        public Students studentsList
-        {
-            get { return studentsList; }
-            set { studentsList = value; }
-        }
         public string DataType
         {
             get { return columns.TypeOfData; }
@@ -43,6 +33,7 @@ namespace Erasmus
             get { return columns.ColName; }
             set { columns.ColName = value; }
         }
+
         #endregion
 
 
@@ -51,6 +42,7 @@ namespace Erasmus
         public event Func<int, string[]> GetObjectValues;
         public event Action<string[], string[], int> OpenWindow;
         public event Action<object> FormClose;
+        public event Action<int> DeleteRecord;
 
         #region mds
         private void studenciToolStripMenuItem_Click(object sender, EventArgs e)
@@ -79,14 +71,37 @@ namespace Erasmus
             if (columns.SelectedIndex != -1)
             {
                 OpenWindow(GetLables(DataType), GetObjectValues(columns.SelectedIndex), columns.SelectedIndex);
+                ColumnsValue = LoadData(DataType);
             }
         }
-
-        #endregion
 
         private void View_FormClosing(object sender, FormClosingEventArgs e)
         {
             FormClose(sender);
+            
         }
+
+        private void buttonAddNew_Click(object sender, EventArgs e)
+        {
+            if (DataType == "Students" || DataType == "Universities")
+            {
+                OpenWindow(GetLables(DataType), null, 0);
+                ColumnsValue = LoadData(DataType);
+            }
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if (columns.SelectedIndex != -1)
+            {
+                DeleteRecord(columns.SelectedIndex);
+                ColumnsValue = LoadData(DataType);
+            }
+                
+        }
+
+        #endregion
+
+
     }
 }

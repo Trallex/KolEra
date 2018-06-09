@@ -64,8 +64,19 @@ namespace Erasmus.Views
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
-        {            
-            SaveObject(EditedItem, TextBoxObject );
+        {
+            errorProvider1.Clear();
+            if(AllFilled())
+                SaveObject(EditedItem, TextBoxObject );
+            else
+                errorProvider1.SetError(buttonSave, "Uzupełnij wszystkie dane!");
+        }
+
+        private bool AllFilled()
+        {
+            if (textBoxValue1.Text != "" && textBoxValue2.Text != "" && textBoxValue3.Text != "" && textBoxValue4.Text != "")
+                return true;
+            else return false;
         }
 
         private void fillFields(string[] lables, string[]values)

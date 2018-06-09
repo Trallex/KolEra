@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelType1 = new System.Windows.Forms.Label();
             this.labelValue1 = new System.Windows.Forms.Label();
             this.textBoxValue1 = new System.Windows.Forms.TextBox();
@@ -42,6 +43,8 @@
             this.labelType4 = new System.Windows.Forms.Label();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelType1
@@ -66,7 +69,7 @@
             // 
             this.textBoxValue1.Location = new System.Drawing.Point(151, 47);
             this.textBoxValue1.Name = "textBoxValue1";
-            this.textBoxValue1.Size = new System.Drawing.Size(100, 22);
+            this.textBoxValue1.Size = new System.Drawing.Size(142, 22);
             this.textBoxValue1.TabIndex = 2;
             this.textBoxValue1.Visible = false;
             // 
@@ -74,7 +77,7 @@
             // 
             this.textBoxValue2.Location = new System.Drawing.Point(151, 110);
             this.textBoxValue2.Name = "textBoxValue2";
-            this.textBoxValue2.Size = new System.Drawing.Size(100, 22);
+            this.textBoxValue2.Size = new System.Drawing.Size(142, 22);
             this.textBoxValue2.TabIndex = 5;
             this.textBoxValue2.Visible = false;
             // 
@@ -100,7 +103,7 @@
             // 
             this.textBoxValue3.Location = new System.Drawing.Point(151, 177);
             this.textBoxValue3.Name = "textBoxValue3";
-            this.textBoxValue3.Size = new System.Drawing.Size(100, 22);
+            this.textBoxValue3.Size = new System.Drawing.Size(142, 22);
             this.textBoxValue3.TabIndex = 8;
             this.textBoxValue3.Visible = false;
             // 
@@ -126,7 +129,7 @@
             // 
             this.textBoxValue4.Location = new System.Drawing.Point(151, 250);
             this.textBoxValue4.Name = "textBoxValue4";
-            this.textBoxValue4.Size = new System.Drawing.Size(100, 22);
+            this.textBoxValue4.Size = new System.Drawing.Size(142, 22);
             this.textBoxValue4.TabIndex = 11;
             this.textBoxValue4.Visible = false;
             // 
@@ -168,11 +171,15 @@
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // EditItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 361);
+            this.ClientSize = new System.Drawing.Size(346, 374);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.textBoxValue4);
@@ -189,6 +196,7 @@
             this.Controls.Add(this.labelType1);
             this.Name = "EditItem";
             this.Text = "Podgląd";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,5 +218,6 @@
         private System.Windows.Forms.Label labelType4;
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

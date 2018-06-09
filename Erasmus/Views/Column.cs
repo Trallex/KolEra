@@ -22,7 +22,7 @@ namespace Erasmus.Views
         {
             get
             {
-                if (listViewData.Items.Count>0)
+                if (listViewData.SelectedItems.Count>0)
                 {
                     int i = listViewData.SelectedItems[0].Index;
                     return i;
@@ -63,33 +63,33 @@ namespace Erasmus.Views
         public object ColElements
         {
             get
-            {                
-                int i = 0;
-                if (TypeOfData == "Students")
-                {
-                    List<Student> students = new List<Student>();
-                    foreach (string s in listViewData.Items)
-                    {
-                        Console.WriteLine(s);
-                        //Student student = new Student(s, listBoxValues2.Items[i].ToString(), listBoxValues3.Items[i].ToString(), listBoxValues4.Items[i].ToString());
-                      //  i++;
-                       // students.Add(student);
-                    }
-                    return students;
-                }
-                else if(TypeOfData == "Universities")
-                {
-                    List<University> universities = new List<University>();
-                    foreach (string s in listViewData.Items)
-                    {
-                       // University university = new University(s, listBoxValues2.Items[i].ToString(), listBoxValues3.Items[i].ToString(), listBoxValues4.Items[i].ToString());
-                        //i++;
-                       // universities.Add(university);
-                    }
-                    return universities;
-                }
-                return null;
-            }                
+            { return null; }             
+                //int i = 0;
+                //if (TypeOfData == "Students")
+                //{
+                //    List<Student> students = new List<Student>();
+                //    foreach (string s in listViewData.Items)
+                //    {
+                //        Console.WriteLine(s);
+                //        //Student student = new Student(s, listBoxValues2.Items[i].ToString(), listBoxValues3.Items[i].ToString(), listBoxValues4.Items[i].ToString());
+                //      //  i++;
+                //       // students.Add(student);
+                //    }
+                //    return students;
+                //}
+                //else if(TypeOfData == "Universities")
+                //{
+                //    List<University> universities = new List<University>();
+                //    foreach (string s in listViewData.Items)
+                //    {
+                //       // University university = new University(s, listBoxValues2.Items[i].ToString(), listBoxValues3.Items[i].ToString(), listBoxValues4.Items[i].ToString());
+                //        //i++;
+                //       // universities.Add(university);
+                //    }
+                //    return universities;
+                //}
+                //return null;
+            // }                
             set
             {
                 ClearColumns();
@@ -125,7 +125,7 @@ namespace Erasmus.Views
         }     
 
            
-        private void ClearColumns()
+        public void ClearColumns()
         {
             listViewData.Items.Clear();
 

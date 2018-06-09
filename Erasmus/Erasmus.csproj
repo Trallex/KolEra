@@ -51,6 +51,12 @@
     <Compile Include="SaveXML.cs" />
     <Compile Include="Students.cs" />
     <Compile Include="Universities.cs" />
+    <Compile Include="Views\AddItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddItem.Designer.cs">
+      <DependentUpon>AddItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Column.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -63,6 +69,7 @@
     <Compile Include="Views\EditItem.Designer.cs">
       <DependentUpon>EditItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\IAddItem.cs" />
     <Compile Include="Views\IEditItem.cs" />
     <Compile Include="Views\IView.cs" />
     <Compile Include="Views\View.cs">
@@ -73,6 +80,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Views\AddItem.resx">
+      <DependentUpon>AddItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Column.resx">
       <DependentUpon>Column.cs</DependentUpon>
     </EmbeddedResource>
