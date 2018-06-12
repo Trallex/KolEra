@@ -77,7 +77,11 @@ namespace Erasmus
 
         private void View_FormClosing(object sender, FormClosingEventArgs e)
         {
-            FormClose(sender);
+            DialogResult dialogResult = MessageBox.Show("Zapisać zmiany?", "Wyjście", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                FormClose(sender);
+            }          
             
         }
 

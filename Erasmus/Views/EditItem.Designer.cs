@@ -194,6 +194,9 @@
             this.Controls.Add(this.textBoxValue1);
             this.Controls.Add(this.labelValue1);
             this.Controls.Add(this.labelType1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(364, 421);
+            this.MinimumSize = new System.Drawing.Size(364, 421);
             this.Name = "EditItem";
             this.Text = "Podgląd";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

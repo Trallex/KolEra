@@ -120,6 +120,9 @@
             this.Controls.Add(this.buttonShowRecord);
             this.Controls.Add(this.menuStripNavi);
             this.MainMenuStrip = this.menuStripNavi;
+            this.MaximumSize = new System.Drawing.Size(830, 594);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(830, 594);
             this.Name = "View";
             this.Text = "Erasmus";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.View_FormClosing);

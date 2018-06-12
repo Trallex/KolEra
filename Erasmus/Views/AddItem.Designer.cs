@@ -134,6 +134,9 @@
             this.Controls.Add(this.textBoxValue2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxValue1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(457, 342);
+            this.MinimumSize = new System.Drawing.Size(457, 342);
             this.Name = "AddItem";
             this.Text = "AddItem";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
