@@ -1,0 +1,5 @@
+﻿Napisz program ułatwiający pracę pracownikom Biura Wymiany Akademickiej.
+Program powinien pokazywać istotne informacje o studentach i uczelniach biorącyhc udział w programie Erasmus.
+Wytyczne do kolosa:
+Zgodnie z paradygmatami programowania obiektowego stwórz aplikację z interfejsem użytkownika wykorzystując trójwarstowoą architekturę.
+zadbaj o walidację interfejsu graficznego, dane przechowywuj w pliku xml lub json.

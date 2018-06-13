@@ -10,7 +10,7 @@ namespace Erasmus
     {
         IView view;
         Model model;
-        public Presenter(Model model, IView view, IEditItem editItem)
+        public Presenter(Model model, IView view)//, IEditItem editItem)
         {
             this.model = model;
             this.view = view;

@@ -19,7 +19,7 @@ namespace Erasmus
             Model model = new Model();
             View view = new View();
             Views.EditItem editItem = new Views.EditItem();
-            Presenter p = new Presenter(model, view, editItem);           
+            Presenter p = new Presenter(model, view);//, editItem);           
             Application.Run(view);
         }
     }
